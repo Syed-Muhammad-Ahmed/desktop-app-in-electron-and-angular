@@ -7,10 +7,19 @@
     placeholder="Enter your age"
     min="0"
     max="9999999999999"
-    (change)="resetFunc()"
+    (ngModelChange)="resetFunc()"
   />
 
-  <button style="padding: 6px; margin-left: 5px" (click)="myFunction()">
+  <button
+    style="
+      padding: 6px;
+      margin-left: 5px;
+      background-color: darkcyan;
+      color: white;
+      border-radius: 6px;
+    "
+    (click)="myFunction()"
+  >
     Enter
   </button>
 

@@ -15,6 +15,6 @@ export class AppComponent {
   };
 
   resetFunc = () => {
-    this.valueEntered ? (this.valueEntered = false) : '';
+    this.valueEntered = false;
   };
 }
