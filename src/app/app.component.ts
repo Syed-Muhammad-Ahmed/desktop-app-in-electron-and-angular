@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +8,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'electron-angular';
-  valueEntered = false;
   age: Number = 0;
 
+  constructor() {}
   myFunction = () => {
-    this.valueEntered = true;
-  };
-
-  resetFunc = () => {
-    this.valueEntered = false;
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: `Your Age Is ${this.age}`,
+      showConfirmButton: false,
+      timer: 1500,
+    });
   };
 }

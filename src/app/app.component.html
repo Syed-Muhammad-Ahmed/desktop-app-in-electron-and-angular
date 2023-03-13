@@ -1,29 +1,16 @@
-<h3>
-  What is your age ?
-  <input
-    [(ngModel)]="age"
-    type="number"
-    required
-    placeholder="Enter your age"
-    min="0"
-    max="9999999999999"
-    (ngModelChange)="resetFunc()"
-  />
+<div class="d-flex">
+  <h3>
+    What is your age ?
+    <input
+      [(ngModel)]="age"
+      type="number"
+      required
+      placeholder="Enter your age"
+      min="0"
+      max="9999999999999"
+    />
 
-  <button
-    style="
-      padding: 6px;
-      margin-left: 5px;
-      background-color: darkcyan;
-      color: white;
-      border-radius: 6px;
-    "
-    (click)="myFunction()"
-  >
-    Enter
-  </button>
-
-  <h3 *ngIf="valueEntered">Your age is {{ age }}</h3>
-</h3>
-
+    <button class="submitButton" (click)="myFunction()">Submit</button>
+  </h3>
+</div>
 <router-outlet></router-outlet>
