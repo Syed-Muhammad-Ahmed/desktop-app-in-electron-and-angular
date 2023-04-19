@@ -28,16 +28,14 @@ export class LoginComponent {
     const email = document.getElementById('email');
     if (email) {
       email.onkeypress = (e: any) => {
-        console.log(e.code);
-
-        e.code === 'Enter' || 'NumpadEnter' ? this.login() : '';
+        if (e.code === 'Enter' || e.code === 'NumpadEnter') this.login();
       };
     }
 
     const password = document.getElementById('pass');
     if (password) {
       password.onkeypress = (e: any) => {
-        e.code === 'Enter' || 'NumpadEnter' ? this.login() : '';
+        if (e.code === 'Enter' || e.code === 'NumpadEnter') this.login();
       };
     }
 
