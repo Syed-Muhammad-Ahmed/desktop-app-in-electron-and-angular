@@ -4,7 +4,7 @@
   font-size: 45px;
   font-family: serif;
   font-weight: bolder;
-  padding-top: 80px;
+  padding-top: 50px;
   padding-bottom: 100px;
   background: transparent;
 }
@@ -32,6 +32,27 @@
   background-color: #300909;
   position: absolute;
   top: 55%;
+  border-radius: 15px;
+  color: white;
+  padding: 15px 40px;
+  font-weight: bold;
+
+  &:hover {
+    background-color: #300909;
+    color: white;
+  }
+  &:active {
+    background-color: #300909 !important;
+    color: white !important;
+  }
+}
+.goBack {
+  text-align: center;
+}
+.backButton {
+  border: none;
+  background-color: #300909;
+  margin-top: 25px;
   border-radius: 15px;
   color: white;
   padding: 15px 40px;
