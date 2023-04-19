@@ -1,0 +1,164 @@
+<div class="navbar-area">
+  <div class="main-nav">
+    <div class="container">
+      <nav class="navbar navbar-expand-md navbar-light">
+        <a class="navbar-brand" routerLink="/admin"></a>
+
+        <div
+          class="navbar-collapse mean-menu collapse"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a routerLink="/admin" class="nav-link dropdown-toggle">Admin</a>
+            </li>
+
+            <li class="nav-item">
+              <a routerLink="/admin/jobs" class="nav-link dropdown-toggle"
+                >Jobs Posting</a
+              >
+            </li>
+
+            <li class="nav-item">
+              <a routerLink="/admin/applicants" class="nav-link dropdown-toggle"
+                >Applicants</a
+              >
+            </li>
+            <li class="nav-item">
+              <a routerLink="/admin/quotes" class="nav-link dropdown-toggle"
+                >Quotes</a
+              >
+            </li>
+            <li class="nav-item">
+              <a routerLink="/admin/clients" class="nav-link dropdown-toggle"
+                >Our Clients</a
+              >
+            </li>
+            <div class="navbar-button">
+              <a style="cursor: pointer" (click)="logout()">Logout</a>
+            </div>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<div class="main-content">
+  <div class="row card">
+    <div class="content-header">
+      <strong class="heading">{{ data ? "Edit" : "Add" }} Client</strong>
+    </div>
+    <c-card-body>
+      <form cForm>
+        <div class="row">
+          <!-- company name -->
+          <div class="col-md-4 mb-3">
+            <label cLabel for="companyName">Company Name</label>
+            <input
+              #companyName
+              cFormControl
+              name="one"
+              id="companyName"
+              type="text"
+              placeholder="Enter Company Name"
+              value="{{ data?.cName ?? '' }}"
+              [(ngModel)]="cName"
+            />
+          </div>
+
+          <div class="col-md-4 mt-8 mb-3">
+            <label cLabel for="designation">Designation</label>
+            <input
+              #designation
+              cFormControl
+              name="two"
+              id="designation"
+              type="text"
+              placeholder="Enter designation"
+              value="{{ data?.desig ?? '' }}"
+              [(ngModel)]="desig"
+            />
+          </div>
+          <!-- CLIENT Picture -->
+          <div class="col-md-4 mb-3">
+            <label class="mb-2" for="image">Choose image</label>
+            <input
+              #image
+              cFormControl
+              name="upload-pic"
+              id="file"
+              type="file"
+              (change)="setFileEvent($event)"
+            />
+
+            <img
+              *ngIf="data?.img?.response"
+              src="{{ data?.img?.response }}"
+              alt=""
+              width="200px"
+              
+            />
+          </div>
+          <div
+            class="col-md-2 mb-3"
+            style="display: flex; flex-direction: column"
+          >
+            <label cLabel for="stars">Rating in Stars</label>
+
+            <select
+              #starsInput
+              cFormControl
+              name="three"
+              id="stars"
+              [(ngModel)]="stars"
+              style="height: 35px; border-radius: 4px"
+            >
+              <option disabled selected value="">Select rating in stars</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+
+          <!-- description -->
+          <div class="col-md-12 mb-3">
+            <label cLabel for="description">Description</label>
+            <textarea
+              #description
+              cFormControl
+              name="four"
+              id="description"
+              type="text"
+              placeholder="Enter Description"
+              value="{{ data?.desc ?? '' }}"
+              [(ngModel)]="desc"
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="submit-button">
+          <button
+            class="btn btn-primary"
+            (click)="
+              submit({
+                cName: companyName?.value,
+                desc: description?.value,
+                desig: designation.value,
+                stars: starsInput?.value
+              })
+            "
+          >
+            <span
+              *ngIf="loading"
+              class="spinner-border spinner-border-sm mr-1"
+            ></span>
+            Submit
+          </button>
+        </div>
+      </form>
+    </c-card-body>
+  </div>
+</div>

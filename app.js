@@ -7,8 +7,8 @@ let mainWindow;
 function createWindow() {
   mainWindow = new BrowserWindow({
     title: "Desktop App In Angular + Electron",
-    width: 1000,
-    height: 800,
+    width: 1200,
+    height: 900,
     webPreferences: {
       nodeIntegration: true,
     },

@@ -1,0 +1,47 @@
+<div class="parent" style="background-image: url(assets/images/login.jpg)">
+  <!-- heading -->
+  <h1 class="page-header">Admin Login</h1>
+
+  <!-- login form -->
+  <div class="login-form">
+    <form class="login-form-styling">
+      <!-- email -->
+      <div class="form-group">
+        <label style="color: #ffffff; font-size: 18px">Email</label>
+        <input
+          id="email"
+          type="text"
+          class="form-control"
+          style="border-radius: 20px; padding: 15px 20px"
+          [(ngModel)]="email"
+          name="email"
+        />
+      </div>
+
+      <!-- password -->
+      <div class="form-group">
+        <label style="color: #ffffff; font-size: 18px; margin-top: 20px"
+          >Password</label
+        >
+        <input
+          id="pass"
+          type="password"
+          class="form-control"
+          style="border-radius: 20px; padding: 15px 20px"
+          [(ngModel)]="password"
+          name="password"
+        />
+      </div>
+
+      <!-- login button -->
+      <div class="form-group">
+        <div class="login-button-center">
+          <button type="button" class="btn login-button" (click)="login()">
+            <span *ngIf="loading" class="loader"></span>
+            Login
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

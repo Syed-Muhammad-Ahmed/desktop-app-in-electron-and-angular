@@ -11,6 +11,9 @@ import { ProductsComponent } from './components/products/products.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from '../environments/environment';
+import { FirebaseService } from './admin/utils/firebase.util';
 
 @NgModule({
   declarations: [
@@ -22,8 +25,14 @@ import { FooterComponent } from './components/footer/footer.component';
     HeaderComponent,
     FooterComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, RouterModule],
-  providers: [HomeComponent],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    RouterModule,
+    AngularFireModule.initializeApp(environment.firebase),
+  ],
+  providers: [HomeComponent, FirebaseService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
