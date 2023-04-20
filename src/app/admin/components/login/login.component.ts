@@ -77,4 +77,11 @@ export class LoginComponent {
         });
       });
   };
+
+  /**
+   * function to go back to web
+   */
+  backToWeb = () => {
+    this.route.navigate(['/home']);
+  };
 }

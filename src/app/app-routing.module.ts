@@ -23,6 +23,7 @@ const routes: Routes = [
 
   // by default, it will load client routes with base layout
   { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'products', component: ProductsComponent },
   { path: '**', component: PageNotFoundComponent },
 ];

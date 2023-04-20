@@ -6,11 +6,13 @@ let mainWindow;
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    title: "Desktop App In Angular + Electron",
-    width: 1200,
+    title: "Ecommerce Store",
+    width: 1500,
     height: 900,
     webPreferences: {
       nodeIntegration: true,
+      contextIsolation: true,
+      worldSafeExecuteJavaScript: true,
     },
   });
 
@@ -22,7 +24,7 @@ function createWindow() {
     })
   );
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools();
+  mainWindow.webContents.openDevTools();
 
   mainWindow.on("closed", function () {
     mainWindow = null;
