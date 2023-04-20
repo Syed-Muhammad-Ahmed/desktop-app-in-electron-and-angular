@@ -1,12 +1,8 @@
 <div class="parent" style="background-image: url(assets/images/login.jpg)">
   <!-- go back -->
   <div class="goBack">
-    <!-- error -->
-    <!-- <a class="backButton" href="/home">Back to web</a> -->
-    <!-- no error -->
-    <a class="backButton" routerLink="/home">Back to web</a>
-    <!-- no error -->
-    <!-- <a class="backButton" (click)="backToWeb()">Back to web</a> -->
+    <a class="backButton" href="/home">Back to web</a>
+    <!-- <a class="backButton" routerLink="/home">Back to web</a> -->
   </div>
   <!-- heading -->
   <h1 class="page-header">Admin Login</h1>
@@ -42,15 +38,22 @@
         />
       </div>
 
+      <div class="form-group login-button-center">
+        <button class="loginB" (click)="login()">
+          LOGIN
+          <span *ngIf="loading" class="loader"></span>
+        </button>
+      </div>
+
       <!-- login button -->
-      <div class="form-group">
+      <!-- <div class="form-group">
         <div class="login-button-center">
           <button type="button" class="btn login-button" (click)="login()">
             <span *ngIf="loading" class="loader"></span>
             Login
           </button>
         </div>
-      </div>
+      </div> -->
     </form>
   </div>
 </div>
