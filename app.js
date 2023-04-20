@@ -16,6 +16,11 @@ function createWindow() {
     },
   });
 
+  mainWindow.webContents.on("did-fail-load", () => {
+    console.log("did-fail-load");
+    mainWindow.loadFile("dist/electron-angular/index.html");
+  });
+
   mainWindow.loadURL(
     url.format({
       pathname: path.join(__dirname, `/dist/electron-angular/index.html`),

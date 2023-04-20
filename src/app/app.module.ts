@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
@@ -31,6 +31,7 @@ import { FirebaseService } from './admin/utils/firebase.util';
     FormsModule,
     RouterModule,
     AngularFireModule.initializeApp(environment.firebase),
+    CarouselModule.forRoot(),
   ],
   providers: [HomeComponent, FirebaseService],
   bootstrap: [AppComponent],
