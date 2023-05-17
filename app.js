@@ -17,7 +17,7 @@ function createWindow() {
   });
 
   mainWindow.webContents.on("did-fail-load", () => {
-    console.log("did-fail-load");
+    // console.log("did-fail-load");
     mainWindow.loadFile("dist/electron-angular/index.html");
   });
 
@@ -29,7 +29,7 @@ function createWindow() {
     })
   );
   // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  // mainWindow.webContents.openDevTools();
 
   mainWindow.on("closed", function () {
     mainWindow = null;

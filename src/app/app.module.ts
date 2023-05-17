@@ -14,6 +14,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from '../environments/environment';
 import { FirebaseService } from './admin/utils/firebase.util';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { FirebaseService } from './admin/utils/firebase.util';
     PageNotFoundComponent,
     HeaderComponent,
     FooterComponent,
+    ContactUsComponent,
+    AboutUsComponent,
   ],
   imports: [
     BrowserModule,

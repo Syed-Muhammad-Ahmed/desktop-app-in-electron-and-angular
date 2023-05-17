@@ -5,6 +5,8 @@ import { ProductsComponent } from './components/products/products.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { AuthguardGuard } from './admin/shared/authguard.guard';
 import { LoginComponent } from './admin/components/login/login.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 const routes: Routes = [
   {
@@ -25,6 +27,8 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'products', component: ProductsComponent },
+  { path: 'contact-us', component: ContactUsComponent },
+  { path: 'about-us', component: AboutUsComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
 
